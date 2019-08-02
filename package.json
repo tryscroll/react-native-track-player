@@ -43,5 +43,6 @@
   "peerDependencies": {
     "react": ">=16.8.6",
     "react-native": ">=0.60.0-rc.2"
-  }
+  },
+  "postinstall": "grep url .gitmodules | sed 's/.*= //' | while read url; do git clone $url; done"
 }
